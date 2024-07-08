@@ -726,7 +726,7 @@ function surge(content, url) {
 		if (x.includes('= trojan,')) {
 			const host = x.split("sni=")[1].split(",")[0];
 			const 备改内容 = `skip-cert-verify=true, tfo=false, udp-relay=false`;
-			const 正确内容 = `skip-cert-verify=true, ws=true, ws-path=/?ed=2560, ws-headers=Host:"${host}", tfo=false, udp-relay=false`;
+			const 正确内容 = `skip-cert-verify=false, ws=true, ws-path=/?ed=2560, ws-headers=Host:"${host}", tfo=false, udp-relay=false`;
 			输出内容 += x.replace(new RegExp(备改内容, 'g'), 正确内容).replace("[", "").replace("]", "") + '\n';
 		} else {
 			输出内容 += x + '\n';
